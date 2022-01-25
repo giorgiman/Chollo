@@ -1,0 +1,25 @@
+header {
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+}
+
+#main-header a {
+    color: white;
+}
+
+#main-header {
+    width: 100%;
+    background-color: rgb(20, 18, 18);
+    color: white;
+    height: 100px;
+}
+
+#main-header a {
+    color: white;
+}
