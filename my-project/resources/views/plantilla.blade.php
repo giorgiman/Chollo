@@ -6,21 +6,25 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
  
 </head>
 <body>
     <header>
-        <a id="logo-header" href=" {{ route('inicio') }} ">
-            <img class="logo-image" src="assets/img/chollo.png" alt="chollo" />
-            <span class="site-name">ChollosGiorgi.com</span>  
+        <div id="header-inicio">
+        <a id="header-logo" href=" {{ route('inicio') }} ">
+            <img class="logo-imagen" src="{{ asset('assets/img/icono/chollo.png') }}" alt="chollo" />
+            <span class="logo-nombre1">ChollosGiorgi.com</span>
+            <span class="logo-nombre2">░▒▓ Severo</span>
         </a>
-
-        <nav>
-            <ul><li>Enlace 1</li>
-                <li>Enlace 2</li>
-                <li>Enlace 3</li>
-                <li>Enlace 4</li>
+    </div>
+        <nav id="menu">
+            <ul>
+                <a href="{{ route('inicio') }}"><img src="{{ asset('assets/img/icono/inicio.png') }}" alt="casa" />Inicio</a>
+                <a href="{{ route('chollos') }}"><img src="{{ asset('assets/img/icono/chollo.png') }}"alt="nuevo" />Chollos</a>
+                <a href="{{ route('chollos') }}"><img src="{{ asset('assets/img/icono/reciente.png') }}"alt="nuevo" />Reciente</a>
+                <a href="{{ route('chollos') }}"><img src="{{ asset('assets/img/icono/popular.png') }}"alt="casa" />Popular</a>
+                <a href="{{ route('crearchollo') }}"><img src="{{ asset('assets/img/icono/crearchollo.png') }}"alt="nuevochollo" />Crear Chollo</a>
             </ul>
         </nav>
     </header>
