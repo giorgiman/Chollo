@@ -11,9 +11,10 @@ class PagesController extends Controller
     public function chollos() 
     {
         $chollos = Chollo::all();
+        $chollos = Chollo::paginate(5);
         return view('chollos', compact('chollos'));
-
     }
+    
 
     
     public function detalle($id) {

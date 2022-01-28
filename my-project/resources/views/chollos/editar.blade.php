@@ -69,13 +69,12 @@
   autofocus
   >      
 
-  <input 
+  <textarea
    type="text"
    required name="descripcion" 
    placeholder="Descripción del chollo" 
    class="form-control mb-2"
-   value="{{ $chollo -> descripcion }}"
-   >
+   >{{ $chollo -> descripcion }}</textarea>
 
    <input 
    type="text" 

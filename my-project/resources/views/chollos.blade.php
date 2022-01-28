@@ -48,6 +48,14 @@
         @endforeach
     </tbody>
 </table>
-</div>
 
+</div>
+<div class="paginacion">
+
+    <!--Paginación por defecto no siempre sale todo-->
+    {{-- $chollos->links() --}}
+    
+{{$chollos->links()}}
+
+</div>
 @endsection

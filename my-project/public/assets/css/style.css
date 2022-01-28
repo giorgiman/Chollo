@@ -7,12 +7,28 @@ body {
 }
 
 
+/*Paginación*/
+
+.paginacion {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+svg {
+    width: 5%;
+    color: black;
+    background-color: rgb(104, 5, 5);
+}
+
+
 /*Header*/
 
 header {
     background-color: rgb(20, 18, 18);
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 header #header-inicio {
@@ -32,6 +48,10 @@ header #header-logo span {
     ;
 }
 
+header #header-logo a:hover {
+    text-decoration: none;
+}
+
 header #header-logo .logo-nombre2 {
     font-size: 1.5em;
 }
@@ -48,7 +68,12 @@ header nav ul {
 }
 
 header nav ul li {
+    text-align: center;
     color: white;
+}
+
+header nav ul a {
+    text-align: center;
 }
 
 

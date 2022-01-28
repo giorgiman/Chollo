@@ -22,7 +22,7 @@
             <ul>
                 <a href="{{ route('inicio') }}"><img src="{{ asset('assets/img/icono/inicio.png') }}" alt="casa" />Inicio</a>
                 <a href="{{ route('chollos') }}"><img src="{{ asset('assets/img/icono/chollo.png') }}"alt="nuevo" />Chollos</a>
-                <a href="{{ route('chollos') }}"><img src="{{ asset('assets/img/icono/reciente.png') }}"alt="nuevo" />Reciente</a>
+                <a href="{{ route('chollos') }}"><img src="{{ asset('assets/img/icono/reciente.png') }}"alt="nuevo" />Nuevo</a>
                 <a href="{{ route('chollos') }}"><img src="{{ asset('assets/img/icono/popular.png') }}"alt="casa" />Popular</a>
                 <a href="{{ route('crearchollo') }}"><img src="{{ asset('assets/img/icono/crearchollo.png') }}"alt="nuevochollo" />Crear Chollo</a>
             </ul>

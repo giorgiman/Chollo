@@ -7,7 +7,7 @@
     @csrf {{-- Cláusula para obtener un token de formulario al enviarlo --}}
     
     <input type="text" required name="titulo" placeholder="Nombre del chollo" class="form-control mb-2" autofocus>
-    <input type="text" required name="descripcion" placeholder="Descripción del chollo" class="form-control mb-2">
+    <textarea type="text" required name="descripcion" placeholder="Descripción del chollo" class="form-control mb-2"></textarea>
     <input type="text" required name="url" placeholder="Enlace del chollo" class="form-control mb-2">
     <input type="text" required name="categoria" placeholder="Categoría" class="form-control mb-2">
     <input type="number" required name="puntuacion" placeholder="Puntuación del chollo" class="form-control mb-2">
