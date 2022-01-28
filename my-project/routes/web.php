@@ -29,3 +29,7 @@ Route::get('chollos', [ PagesController::class, 'chollos' ]) -> name('chollos');
     Route::get('editar/{id}', [ PagesController::class, 'editar' ]) -> name('chollos.editar');
     Route::put('editar/{id}', [ PagesController::class, 'actualizar' ]) -> name('chollos.actualizar');
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
