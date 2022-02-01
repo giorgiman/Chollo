@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
+use Illuminate\Support\Facades\DB;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +31,16 @@ Route::get('chollos', [ PagesController::class, 'chollos' ]) -> name('chollos');
     Route::put('editar/{id}', [ PagesController::class, 'actualizar' ]) -> name('chollos.actualizar');
 
 
-Auth::routes();
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+//Destacado y nuevo
+
+Route::view('destacados', 'destacado')->name('destacado');
+Route::view('nuevos', 'nuevos')->name('nuevos');
+
+Route::get('destacados', [PagesController::class, 'destacados'])->name('destacados');
+
+Route::get('nuevos', [PagesController::class, 'nuevos'])->name('nuevos');
