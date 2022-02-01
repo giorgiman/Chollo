@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Chollo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PagesController extends Controller
 {
@@ -81,5 +82,18 @@ class PagesController extends Controller
       
         return back() -> with('mensaje', 'Nota actualizada');
       }
+
+      function destacados() {
+        //$chollos = Chollo::all();
+        $chollos = DB::table('chollos')->orderByDesc('puntuacion')->limit(4)->get();
+    
+        return view('destacados', compact('chollos'));
+    }
+    
+    function nuevos() {
+        $chollos = DB::table('chollos') ->orderByDesc('id')->limit(4)->get();
+        return view('nuevos', compact('chollos'));
+    }
+
 
 }

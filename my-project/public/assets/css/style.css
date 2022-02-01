@@ -1,3 +1,5 @@
+/*VALORES DEFAULT*/
+
 body {
     background-color: rgb(104, 5, 5);
 }
@@ -29,6 +31,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 145px;
 }
 
 header #header-inicio {
@@ -76,6 +79,29 @@ header nav ul a {
     text-align: center;
 }
 
+header a#header-logo {
+    text-decoration: none;
+}
+
+header a#header-logo:hover {
+    background-color: black;
+    height: 100%;
+    padding: 64px;
+    animation-duration: 1.5s;
+    animation-name: animTexto;
+}
+
+@keyframes animTexto {
+    from {
+        margin-left: -3.5%;
+        width: 100%;
+    }
+    to {
+        margin-left: 0%;
+        width: 100%;
+    }
+}
+
 
 /*----------------------------------*/
 
@@ -83,7 +109,6 @@ header nav ul a {
 /*Menu*/
 
 #menu {
-    float: right;
     display: flex;
 }
 
@@ -93,6 +118,21 @@ header nav ul a {
 
 #menu ul a:hover {
     background-color: black;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    padding: 20px 40px;
+    border: solid rgb(58, 57, 57);
+}
+
+@keyframes animTexto2 {
+    from {
+        margin-bottom: 0%;
+    }
+    to {
+        margin-bottom: -3.5%;
+    }
 }
 
 #menu ul {
@@ -102,7 +142,7 @@ header nav ul a {
 }
 
 #menu ul a {
-    display: block;
+    /*display: block;
     color: #fff;
     text-decoration: none;
     font-weight: 800;
@@ -112,7 +152,22 @@ header nav ul a {
     text-transform: uppercase;
     letter-spacing: 1px;
     margin: 0px 10px 0px 10px;
-    padding-right: 20px;
+    padding-right: 20px;*/
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    padding: 20px 40px;
+}
+
+#menu ul .ultimaa {
+    width: 50%;
+    align-items: center;
+}
+
+#menu ul .ultimaa:hover {
+    text-decoration: none;
+    width: 50%;
+    align-items: center;
 }
 
 #menu ul li {
@@ -155,7 +210,7 @@ header nav ul a {
 }
 
 #menu ul img {
-    width: 40px;
+    width: 60px;
 }
 
 
@@ -182,6 +237,17 @@ header nav ul a {
 
 .inicio img:hover {
     opacity: 0.8;
+}
+
+
+/*VALORES CONJUNTO*/
+
+
+/*TABLA*/
+
+.titulo h1 {
+    text-align: center;
+    margin-top: 40px;
 }
 
 
@@ -260,4 +326,48 @@ header nav ul a {
 
 .crearchollo form {
     width: 80%;
+}
+
+.margen {
+    height: 200px;
+}
+
+
+/*FOOTER*/
+
+#main-footer {
+    background: rgb(26, 26, 26);
+    color: white;
+    text-align: center;
+    padding: 20px 20px 15px 20px;
+    margin-top: 40px;
+}
+
+#main-footer p {
+    font-size: 20px;
+    margin: 0;
+}
+
+#main-footer h4 {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+#main-footer a {
+    color: white;
+}
+
+#main-footer img {
+    width: 75px;
+    border-radius: 10%;
+    padding: 10px 10px 10px 10px;
+    margin: 5px 0px 0px 0px;
+}
+
+#main-footer img:hover {
+    background: rgba(0, 0, 0, 1);
+}
+
+.redes-sociales {
+    flex-wrap: wrap;
 }
