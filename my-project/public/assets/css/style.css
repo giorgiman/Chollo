@@ -333,6 +333,25 @@ header a#header-logo:hover {
 }
 
 
+/*LOGIN*/
+
+.card {
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.card-header {
+    border: none;
+    background-color: rgb(20, 18, 18);
+    font-weight: 700;
+    color: white;
+}
+
+.card-body {
+    background-color: rgb(154 28 24);
+}
+
+
 /*FOOTER*/
 
 #main-footer {

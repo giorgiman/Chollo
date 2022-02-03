@@ -27,6 +27,8 @@
                 <a class="ultimaa" href="{{ route('crearchollo') }}"><img src="{{ asset('assets/img/icono/crearchollo.png') }}"alt="nuevochollo" /><span>Crear Chollo</span></a>
             </ul>
         </nav>
+       
+        
     </header>
     <main>
     @yield('cuerpo')

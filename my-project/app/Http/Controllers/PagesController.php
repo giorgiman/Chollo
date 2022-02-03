@@ -25,8 +25,18 @@ class PagesController extends Controller
     }
 
     public function crearChollo(Request $request) {
+        $request -> validate([
+            'titulo' => 'required',
+            'descripcion' => 'required',
+            'url' => 'required',
+            'categoria' => 'required',
+            'puntuacion' => 'required',
+            'precio' => 'required',
+            'precio_descuento' => 'required',
+            'disponible' => 'required'
+        ]);
+        
         $cholloNuevo = new Chollo;
-
         $cholloNuevo -> titulo = $request -> titulo;
         $cholloNuevo -> descripcion = $request -> descripcion;
         $cholloNuevo -> url = $request -> url;
@@ -37,25 +47,11 @@ class PagesController extends Controller
         $cholloNuevo -> disponible = $request -> disponible;
 
         $cholloNuevo -> save();
-
+        return auth()->user();
         return back() -> with('mensaje', 'Chollo agregado exitósamente');
     }
 
-    public function eliminar($id) {
-        $cholloEliminar = Chollo::findOrFail($id);
-        $cholloEliminar -> delete();
-      
-        return back() -> with('mensaje', 'Chollo Eliminado');
-      }
-
-
-      public function editar($id) {
-        $chollo = Chollo::findOrFail($id);
-      
-        return view('chollos.editar', compact('chollo'));
-      }
-      
-      public function actualizar(Request $request, $id) {
+    public function actualizar(Request $request, $id) {
         $request -> validate([
             'titulo' => 'required',
             'descripcion' => 'required',
@@ -83,6 +79,21 @@ class PagesController extends Controller
         return back() -> with('mensaje', 'Nota actualizada');
       }
 
+    public function eliminar($id) {
+        $cholloEliminar = Chollo::findOrFail($id);
+        $cholloEliminar -> delete();
+      
+        return back() -> with('mensaje', 'Chollo Eliminado');
+      }
+
+
+      public function editar($id) {
+        $chollo = Chollo::findOrFail($id);
+      
+        return view('chollos.editar', compact('chollo'));
+      }
+      
+      
       function destacados() {
         //$chollos = Chollo::all();
         $chollos = DB::table('chollos')->orderByDesc('puntuacion')->limit(4)->get();
@@ -95,5 +106,15 @@ class PagesController extends Controller
         return view('nuevos', compact('chollos'));
     }
 
+    function autenticacion(){
+        return view('auth/login');
+    }
+
+    public function datosUsuario() {
+        return auth()->user();
+        // return auth()->user() -> name;
+        // return auth()->user() -> email;
+        // ...
+      }
 
 }

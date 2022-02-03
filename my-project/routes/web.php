@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 /*
@@ -44,3 +46,23 @@ Route::view('nuevos', 'nuevos')->name('nuevos');
 Route::get('destacados', [PagesController::class, 'destacados'])->name('destacados');
 
 Route::get('nuevos', [PagesController::class, 'nuevos'])->name('nuevos');
+
+
+
+
+//Logeo
+/*Route::get('login', function(){
+    return view('auth/login');
+})-> name('login');*/
+
+Route::get('login', [PagesController::class, 'autenticacion'])-> name('login');
+//Route::view('auth/login', 'login')->name('login');
+
+Auth::routes();
+
+Route::post('chollos', [HomeController::class, 'crearChollo']) -> name('chollos.crear');
+
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

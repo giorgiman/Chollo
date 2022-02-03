@@ -1,8 +1,13 @@
 @extends('plantilla')
 
 @section('cuerpo')
+<h2>ID</h2>
+<p>Texto</p>
+<h2>Nombre</h2>
+<p>Texto</p>
 <div class="chollo">
 <table border="2">
+  <thead>
 <tr>
     <th>ID</th>
     <th>Nombre</th>
@@ -15,6 +20,8 @@
     <th>Disponible</th>
     <th>Acción</th>
 </tr>
+</thead>
+<tbody>
 <tr>
     <td>{{ $chollo->id }}</td>
     <td>{{ $chollo->titulo }}</td>
@@ -25,6 +32,7 @@
     <td>{{ $chollo->precio }}</td>
     <td>{{ $chollo->precio_descuento }}</td>
     <td>{{ $chollo->disponible }}</td>
+    {{ auth()->user() -> name; }} 
     <td><form action="{{ route('chollos.eliminar', $chollo) }}" method="POST" class="d-inline">
         @method('DELETE')
         @csrf
@@ -37,6 +45,8 @@
       </a>
     </td>
 </tr>
+</tbody>
 </table>
 </div>
+<div class="margen"></div>
 @endsection
