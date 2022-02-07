@@ -66,3 +66,6 @@ Route::post('chollos', [HomeController::class, 'crearChollo']) -> name('chollos.
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::get('auth/logout', [PagesController::class, 'logout'])-> name('logout');

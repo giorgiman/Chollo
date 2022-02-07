@@ -28,11 +28,22 @@
             </ul>
         </nav>
        
-        
     </header>
+    
     <main>
     @yield('cuerpo')
 </main>
+        @if (Auth::guest())
+        <a href="{{ route('login') }}">Iniciar sesión</a>
+        @else
+        <p>Bienvenido, {{ Auth::user()->name}}</p>
+        
+        <form action="/auth/logout" method="GET">
+            <button type="submit" class="btn btn-primary">
+                Salir
+            </button>
+        </form>
+        @endif
     <footer id="main-footer">
         <p>&copy; 2021 Copyright Creado con derechos suficientes Para Aprobar - <a href="{{ route('inicio') }}">(Volver al
                 inicio)</a></p>
